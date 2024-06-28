@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap');
+:root {
+    --primary: #000000;
+    --secondary: #ffffff;
+    --accent: #6681B5;
+    --ffTitle: "Racing Sans One", sans-serif;
+    --ffButton: "Karantina", Arial, sans-serif;
+    --ffPara: Arial, Helvetica, sans-serif, serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0px;
+    font-family: var(--ffPara);
+}
+h1 {
+    font-family: var(--ffTitle);
+    font-size: 2.5em;
+}
+h2 {
+    font-size: 2em;
+}
+p {
+    font-size: 1.75em;
+}
+li {
+    font-size: 1.5em;
+}
+.fineprint {
+    font-size: 1em;
+}
+button {
+    font-family: var(--ffButton);
+    width: 200px;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 1000px;
+    height: 39.4375px;
+    transition: all .25s ease;
+}
+header {
+    display: flex;
+    background-color: var(--accent);
+    padding-left: 3.5vw;
+    padding-right: 13.2vw;
+}
+header img {
+    border: solid var(--secondary);
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    margin-top: 25px;
+}
+header h1 {
+    font-family: var(--ffTitle);
+    color: var(--secondary);
+    flex: 50%;
+    margin-left: 2.5vw;
+}
+header button {
+    background-color: var(--secondary);
+    color: var(--accent);
+    margin-top: 35px;
+}
+#content {
+    padding-left: 7vw;
+    padding-right: 10vw;
+}
+#hero {
+    display: flex;
+}
+#heroLeft {
+    flex: 50%;
+    padding-right: 200px;
+}
+#heroLeft button {
+    background-color: var(--accent);
+    color: var(--secondary);
+}
+#heroRight {
+    flex: 50%;
+}
+#heroRight img {
+    margin-top: 1vw;
+    border-radius: 30px;
+    width: 38vw;
+}
+#features {
+    margin-top: 100px;
+}
+.featuresRow {
+    display: flex;
+}
+.featuresText, .featuresImg {
+    flex: 50%;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.featuresImg img {
+    border-radius: 1vw;
+}
+#experience {
+    margin-top: 100px;
+}
+.experienceRow {
+    display: flex;
+}
+.experienceCard {
+    font-size: 0.8em;
+    flex: 33%;
+    border-radius: 30px;
+    text-align: center;
+    background-color: var(--accent);
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 1.5%;
+    padding-bottom: 1%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+    transition: all .5s ease;
+}
+.experienceText {
+    color: var(--secondary);
+}
+.experienceCard img {
+    min-width: 7vw;
+    max-width: 10vw;
+    height: 7vw;
+    border-radius: 1vw;
+}
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes fade-in {
+        from {
+            scale: 0.8;
+            opacity: 0.5;
+        }
+        to {
+            scale: 1;
+            opacity: 1;
+        }
+    }
+    button:hover {
+        scale: 1.05;
+    }
+    .experienceCard:hover {
+        transform: scale(1.05);
+    }
+    .featuresRow, .experienceCard, .featuresImg {
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-range: entry;
+    }
+}
+@media screen and (max-width: 1250px) {
+    #heroLeft {
+        padding-right: 50px;
+    }
+    .featuresRow {
+        flex-direction: column;
+    }
+    #featuresMiddle {
+        flex-direction: column-reverse;
+    }
+}
+@media screen and (max-width: 1000px) {
+    #hero {
+        flex-direction: column-reverse;
+    }
+    #heroRight img {
+        width: 60vw;
+    }
+    .experienceRow {
+        display: block;
+    }
+    .experienceCard {
+        display: flex;
+    }
+    .experienceCard img {
+        flex: 20%;
+        min-width: 15vw;
+        margin-top: 25%;
+        height: fit-content;
+    }
+    .experienceText {
+        padding-left: 5%;
+        flex: 80%;
+    }
+}
